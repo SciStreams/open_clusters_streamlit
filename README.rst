@@ -29,7 +29,7 @@ For proper code citation see original research paper: https://arxiv.org/abs/2403
 
 
 .. |Streamlit| image:: https://static.streamlit.io/badges/streamlit_badge_black_white.svg
-   :target: 
+   :target: https://open-clusters-scistreams.streamlit.app/
    :alt: Streamlit App
 
 
