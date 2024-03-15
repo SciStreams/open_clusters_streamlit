@@ -31,22 +31,34 @@ import os
 # Online
 @st.cache_data
 def load_data_clusters():
-    repository_url="https://github.com/SciStreams/open_clusters_streamlit"
-    directory="data"
-    file = "clusters.csv"
+    file_url = "https://raw.githubusercontent.com/SciStreams/open_clusters_streamlit/main/data/clusters.csv"
+    
+    response = requests.get(file_url)
+    
+    if response.status_code == 200:
 
-    #df = pd.read_csv(file)
-
-    return df
+        csv_data = StringIO(response.text)
+        df = pd.read_csv(csv_data)
+        return df
+    else:
+        st.error(f"Failed to load data. Status code: {response.status_code}")
+        return None
 
 @st.cache_data
 def load_data_members():
 
-    repository_url="https://github.com/SciStreams/open_clusters_streamlit"
-    directory="data"
-    file = 'filtered_members_round.csv'
+    file_url = "https://raw.githubusercontent.com/SciStreams/open_clusters_streamlit/main/data/filtered_members_round.csv"
+    
+    response = requests.get(file_url)
+    
+    if response.status_code == 200:
 
-    return df
+        csv_data = StringIO(response.text)
+        df = pd.read_csv(csv_data)
+        return df
+    else:
+        st.error(f"Failed to load data. Status code: {response.status_code}")
+        return None
 
 def extract_groups(df, kind):
 
