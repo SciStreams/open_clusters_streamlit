@@ -11,6 +11,9 @@ from plotly.subplots import make_subplots
 import pandas as pd
 import os
 
+import requests
+
+
 # Local
 # @st.cache_data
 # def load_data_clusters():
